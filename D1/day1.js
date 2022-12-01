@@ -2,7 +2,7 @@ const fs = require('fs')
 const readline = require('readline')
 
 async function read() {
-    const fileStream = fs.createReadStream(__dirname+"/day1_input.txt");
+    const fileStream = fs.createReadStream("./input.txt");
     
     const rl = readline.createInterface({
         input: fileStream,
@@ -30,7 +30,8 @@ async function read() {
             total+=parseInt(line);
         }
     }   
-    console.log(first+second+third);
+    console.log(first); // part 1
+    console.log(first+second+third); // part 2
 }
 
 read();
