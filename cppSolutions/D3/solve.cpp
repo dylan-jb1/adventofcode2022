@@ -2,11 +2,17 @@
 #include <String>
 #include <iostream>
 #include <set>
+#include <chrono>
 using namespace std;
+
+typedef std::chrono::high_resolution_clock Clock;
 
 int main() {
     ifstream myfile;
     myfile.open ("./input.txt");
+
+    auto start_time = Clock::now();
+    
     string line;
     int total = 0;
     int badgeTotal = 0;
@@ -61,8 +67,11 @@ int main() {
     }
     myfile.close();
 
-    std::cout << total << endl; // part 1
-    std::cout << badgeTotal << endl; // part 2
+    auto end_time = Clock::now();
+    
+    std::cout << "Time taken:" << chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count() << "ns" << std::endl;
+    std::cout << "Total Part 1: " << total << endl; // part 1
+    std::cout << "Total Part 2: " << badgeTotal << endl; // part 2
 
     return 0;
 }
