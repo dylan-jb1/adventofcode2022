@@ -25,7 +25,7 @@ int main() {
 
     auto end_time = Clock::now();
     
-    std::cout << "Time taken:" << chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count() << "ns" << std::endl;
+    std::cout << "Time taken:" << chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count()/1000.0 << "ms" << std::endl;
     std::cout << "Total Part 1: " << p1 << endl; // part 1
     std::cout << "Total Part 2: " << p2 << endl; // part 2
 
