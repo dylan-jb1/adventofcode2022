@@ -11,7 +11,7 @@ typedef std::chrono::high_resolution_clock Clock;
 
 int main() {
     ifstream myfile;
-    myfile.open ("./input.txt");
+    myfile.open ("./input_6mb.txt");
 
     auto start_time = Clock::now();
 

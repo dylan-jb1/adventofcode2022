@@ -17,7 +17,7 @@ int main() {
 
     string line;
 
-    while (myfile >> line) {
+    while (getline(myfile,line)) {
         
     }
 
