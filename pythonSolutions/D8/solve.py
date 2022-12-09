@@ -1,4 +1,6 @@
-file = open("./input.txt")
+import pathlib
+
+file = open(str(pathlib.Path(__file__).parent.resolve()) + "/input.txt")
 
 p1=0
 p2=0
@@ -32,6 +34,13 @@ for rowIndex,row in enumerate(treeGrid): # top to bottom
         if column > columnTopMaxHeight[columnIndex]:
             columnTopMaxHeight[columnIndex] = column
             visible[rowIndex][columnIndex]=1
+
+        vis = 0
+        for index,x in enumerate(row):
+            if (columnIndex != index):
+                if x < column:
+                    vis+=1
+                else: vis=1
 
         for indexLeft,columnScene in enumerate([int(x) for x in reversed(row[:columnIndex])]): # left
             if columnScene < column:
