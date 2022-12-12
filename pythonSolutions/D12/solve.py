@@ -26,13 +26,13 @@ for indexy,line in enumerate(file):
 
 def checkMoves(loc):
     moves = []
-    if (loc[1]-1)>=0 and (ord(grid[loc[1]][loc[0]].lower())-ord(grid[loc[1]-1][loc[0]].lower())>=-1): #up
+    if (loc[1]-1)>=0 and (ord(grid[loc[1]][loc[0]])-ord(grid[loc[1]-1][loc[0]])>=-1): #up
         moves.append([loc[0],loc[1]-1])
-    if (loc[1]+1)<len(grid) and (ord(grid[loc[1]][loc[0]].lower())-ord(grid[loc[1]+1][loc[0]].lower())>=-1): #down
+    if (loc[1]+1)<len(grid) and (ord(grid[loc[1]][loc[0]])-ord(grid[loc[1]+1][loc[0]])>=-1): #down
         moves.append([loc[0],loc[1]+1])
-    if (loc[0]-1)>=0 and (ord(grid[loc[1]][loc[0]].lower())-ord(grid[loc[1]][loc[0]-1].lower())>=-1): #left
+    if (loc[0]-1)>=0 and (ord(grid[loc[1]][loc[0]])-ord(grid[loc[1]][loc[0]-1])>=-1): #left
         moves.append([loc[0]-1,loc[1]])
-    if (loc[0]+1)<len(grid[0]) and (ord(grid[loc[1]][loc[0]].lower())-ord(grid[loc[1]][loc[0]+1].lower())>=-1): #right
+    if (loc[0]+1)<len(grid[0]) and (ord(grid[loc[1]][loc[0]])-ord(grid[loc[1]][loc[0]+1])>=-1): #right
         moves.append([loc[0]+1,loc[1]])
 
     return moves.copy()
